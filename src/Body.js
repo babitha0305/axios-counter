@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-
-
 function Counter() {
   // Initialize the counter state
   const [count, setCount] = useState(0);
@@ -13,7 +11,10 @@ function Counter() {
 
   // Function to decrement the counter
   const decrement = () => {
-    setCount(count - 1);
+    // Ensure the counter doesn't go below 0
+    if (count > 0) {
+      setCount(count - 1);
+    }
   };
 
   return (
@@ -25,4 +26,4 @@ function Counter() {
   );
 }
 
-  export default Counter;
+export default Counter;
